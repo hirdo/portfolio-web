@@ -69,7 +69,7 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="absolute -inset-3 bg-gradient-to-br from-blue-500 to-pink-500 rounded-2xl opacity-20 blur-xl" />
                   <Image
-                    src="/portfolio-image.webp"
+                    src="/hirdo.png"
                     alt="Hirdo - Frontend Developer"
                     width={400}
                     height={500}

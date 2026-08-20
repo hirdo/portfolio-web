@@ -9,7 +9,7 @@ import {
 import { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import portfolio from "/public/portfolio-image.webp";
+import portfolio from "/public/avatar.png";
 import ScrollReveal from "./ScrollReveal";
 import GradientText from "./GradientText";
 
