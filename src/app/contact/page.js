@@ -30,8 +30,8 @@ const contactInfo = [
   {
     icon: faMapMarkerAlt,
     label: 'Location',
-    value: 'Tp.Thu Dau Mot, Binh Duong Province, Vietnam',
-    href: 'https://maps.google.com/?q=Thu+Dau+Mot,Binh+Duong,Vietnam',
+    value: 'Ho Chi Minh City, Viet Nam',
+    href: 'https://maps.google.com/?q=Ho+Chi+Minh+City,Viet+Nam',
   },
 ];
 
@@ -119,7 +119,7 @@ export default function ContactPage() {
             <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
               <iframe
                 title="My Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501575.5639084257!2d106.45938137226563!3d10.980612700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d117d02f2551%3A0x4623811f94219f0e!2zVGjhu6cgROG6pXUgTeG7mXQsIELDrG5oIETGsMahbmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1734430441000!5m2!1svi!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501575.5639084257!2d106.45938137226563!3d10.980612700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f38f9ed887b%3A0x14aded570258fe00!2sHo%20Chi%20Minh%20City%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
                 className="w-full h-72 border-0"
                 allowFullScreen
                 loading="lazy"
