@@ -19,7 +19,7 @@ const Services = () => {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
               My <GradientText className="text-4xl sm:text-5xl font-bold">Services</GradientText>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
               Professional solutions tailored to your business needs.
             </p>
           </div>

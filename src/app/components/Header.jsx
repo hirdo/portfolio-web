@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Moon, Sun, Menu, X } from "lucide-react";
@@ -10,6 +11,7 @@ const Header = () => {
   const [nav, setNav] = useState(false);
   const [theme, setTheme] = useState("light");
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   const toggleNav = () => setNav(!nav);
 
@@ -71,15 +73,22 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 rounded-lg hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 capitalize"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 capitalize ${
+                    isActive
+                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right Actions */}
@@ -129,17 +138,24 @@ const Header = () => {
       {nav && (
         <div className="fixed inset-0 z-40 bg-white dark:bg-gray-950 md:hidden">
           <div className="flex flex-col items-center justify-center h-full gap-6">
-            {navItems.map((item, i) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setNav(false)}
-                className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors capitalize"
-                style={{ animationDelay: `${i * 50}ms` }}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item, i) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setNav(false)}
+                  className={`text-2xl font-bold transition-colors capitalize ${
+                    isActive
+                      ? 'text-blue-500 dark:text-blue-400'
+                      : 'text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400'
+                  }`}
+                  style={{ animationDelay: `${i * 50}ms` }}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Link
               href="/Resume.pdf"
               target="_blank"

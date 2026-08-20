@@ -50,14 +50,13 @@ export default function MainPage() {
   }, [charIndex, isDeleting, index, roles]);
 
   return (
-    <section id="home" className="relative overflow-hidden flex flex-col justify-center items-center text-center px-4 py-24 sm:py-32 md:py-40 bg-gray-100 dark:bg-gray-900">
+    <section id="home" className="relative overflow-hidden flex flex-col justify-center items-center text-center px-4 py-24 sm:py-32 md:py-40 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       {/* Background decoration */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gray-100 dark:bg-gray-950" />
+      <div className="absolute inset-0 z-0 opacity-40 dark:opacity-30">
         <div
-          className="absolute inset-0 opacity-40 dark:opacity-30"
+          className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse 80% 50% at 20% 40%, rgba(30,144,255,0.10) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(255,20,147,0.06) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse at 30% 20%, rgba(30,144,255,0.12) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(255,20,147,0.10) 0%, transparent 50%)',
           }}
         />
       </div>

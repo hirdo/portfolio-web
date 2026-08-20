@@ -87,7 +87,7 @@ const Project = () => {
                 Projects
               </GradientText>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
               A selection of my recent work. Swipe through to explore each
               project.
             </p>

@@ -222,16 +222,6 @@ p {
   }
 }
 
-.group::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 0 solid transparent;
-  border-radius: 20px;
-  animation: border-fill 1s linear infinite;
-  pointer-events: none;
-}
-
 .card-container {
   position: relative;
   background-color: white;
