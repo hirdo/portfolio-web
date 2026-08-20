@@ -8,7 +8,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import portfolio from "/public/portfolio-image.webp";
+import ScrollReveal from "./ScrollReveal";
+import GradientText from "./GradientText";
 
 export default function MainPage() {
   const [currentRole, setCurrentRole] = useState("");
@@ -34,7 +37,7 @@ export default function MainPage() {
       } else if (isDeleting && charIndex > 0) {
         setCurrentRole(roles[index].substring(0, charIndex - 1));
         setCharIndex((prev) => prev - 1);
-        typingTimeout = setTimeout(typeRole, 50); 
+        typingTimeout = setTimeout(typeRole, 50);
       } else if (!isDeleting && charIndex === roles[index].length) {
         setTimeout(() => setIsDeleting(true), 1000);
       } else if (isDeleting && charIndex === 0) {
@@ -47,75 +50,116 @@ export default function MainPage() {
   }, [charIndex, isDeleting, index, roles]);
 
   return (
-    <section id="home" className="main_page py-8 lg:py-16 relative overflow-hidden bg-gray-100 dark:bg-gray-900">
-      <div className="animated-squares absolute inset-0 pointer-events-none">
-        {[...Array(10)].map((_, i) => (
-          <div key={i} className={`square square-${i + 1}`}></div>
-        ))}
+    <section id="home" className="relative overflow-hidden flex flex-col justify-center items-center text-center px-4 py-24 sm:py-32 md:py-40 bg-gray-100 dark:bg-gray-900">
+      {/* Background decoration */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gray-100 dark:bg-gray-950" />
+        <div
+          className="absolute inset-0 opacity-40 dark:opacity-30"
+          style={{
+            background: 'radial-gradient(ellipse 80% 50% at 20% 40%, rgba(30,144,255,0.10) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(255,20,147,0.06) 0%, transparent 50%)',
+          }}
+        />
       </div>
-      <div className="px-4 lg:px-8 py-4 ">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-          <div className="mt-5 text-center md:text-left">
-            <h3 className="text-2xl font-medium">Hello, I am</h3>
-            <h1 className="text-4xl lg:text-6xl">Hirdo</h1>
-            <h3 className="text-xl lg:text-2xl mt-2">
-              I am a{" "}
-              <span
-                className="text-gradient text-3xl font-semibold"
-                style={{
-                  backgroundImage: "linear-gradient(45deg, #1E90FF, #FF1493)",
-                  WebkitBackgroundClip: "text",
-                  color: "transparent",
-                }}
-              >
-                {currentRole}
-              </span>
-            </h3>
-            <p className="mt-4 text-lg text-justify mx-2 lg:mx-0">
-              Passionate about designing and developing digital solutions that
-              resonate. Lets collaborate to create impactful experiences that
-              inspire and connect.
-            </p>
-            <div className="social_links flex justify-center md:justify-start mt-4 space-x-6">
-              {[
-                {
-                  icon: faFacebookF,
-                  link: "",
-                },
-                {
-                  icon: faInstagram,
-                  link: "",
-                },
-                { icon: faGithub, link: "https://github.com/hirdo" },
-                {
-                  icon: faLinkedinIn,
-                  link: "https://www.linkedin.com/in/hirdo-nguyen/",
-                },
-              ].map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.icon.iconName}
-                  className="border-1 rounded-full p-3 transition-transform transform hover:-translate-y-1 hover:bg-gradient-to-br hover:from-blue-500 hover:to-pink-500 hover:text-white"
-                >
-                  <FontAwesomeIcon icon={social.icon} />
-                </a>
-              ))}
+      {/* Floating decorative elements */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-1/4 left-[12%] w-8 h-8 border-2 border-blue-400/20 dark:border-blue-400/10 rotate-12 animate-pulse" />
+        <div className="absolute top-1/3 right-[8%] w-10 h-10 border-2 border-pink-400/15 dark:border-pink-400/10 -rotate-6 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-1/4 left-[15%] w-6 h-6 border-2 border-blue-400/15 dark:border-blue-400/10 rotate-45 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/3 right-[18%] w-12 h-12 border-2 border-pink-400/10 dark:border-pink-400/5 -rotate-12 animate-pulse" style={{ animationDelay: '0.5s' }} />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto">
+        {/* Profile Image with Gradient Ring */}
+        <div className="mb-10 flex justify-center">
+          <div className="relative p-2 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-xl">
+            <div className="rounded-full overflow-hidden bg-gray-100 dark:bg-gray-900 p-1.5">
+              <Image
+                src={portfolio}
+                alt="Hirdo Profile Picture"
+                width={240}
+                height={240}
+                priority
+                className="rounded-full w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 object-cover"
+              />
             </div>
           </div>
-          <div className="flex justify-center relative mt-10 mx-4 md:mt-0">
-            <Image
-              src={portfolio}
-              alt="Hirdo Profile Picture"
-              width={340}
-              height={340}
-              priority
-              className="rounded-full profile"
-            />
-          </div>
         </div>
+
+        {/* Name */}
+        <ScrollReveal>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 text-gray-900 dark:text-white">
+            Hirdo
+          </h1>
+        </ScrollReveal>
+
+        {/* Typing Role */}
+        <ScrollReveal delay={100}>
+          <h2 className="text-lg sm:text-xl md:text-2xl mb-4">
+            I am a{' '}
+            <GradientText className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+              {currentRole}
+            </GradientText>
+            <span className="text-blue-500 animate-pulse">|</span>
+          </h2>
+        </ScrollReveal>
+
+        <ScrollReveal delay={200}>
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+            Passionate about designing and developing digital solutions that
+            resonate. Let&apos;s collaborate to create impactful experiences that
+            inspire and connect.
+          </p>
+        </ScrollReveal>
+
+        {/* Social Links */}
+        <ScrollReveal delay={300}>
+          <div className="flex justify-center gap-4 mb-8">
+            {[
+              { icon: faFacebookF, link: "#", label: "Facebook", bg: "hover:bg-blue-600" },
+              { icon: faInstagram, link: "#", label: "Instagram", bg: "hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 hover:text-white" },
+              { icon: faGithub, link: "https://github.com/hirdo", label: "GitHub", bg: "hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900" },
+              { icon: faLinkedinIn, link: "https://www.linkedin.com/in/hirdo-nguyen/", label: "LinkedIn", bg: "hover:bg-blue-700" },
+            ].map((social, idx) => (
+              <a
+                key={idx}
+                href={social.link}
+                target={social.link !== '#' ? "_blank" : undefined}
+                rel={social.link !== '#' ? "noopener noreferrer" : undefined}
+                aria-label={social.label}
+                className={`w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 shadow-md border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-0.5 ${social.bg}`}
+              >
+                <FontAwesomeIcon icon={social.icon} className="text-sm" />
+              </a>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        {/* CTA Buttons */}
+        <ScrollReveal delay={400}>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity shadow-lg"
+            >
+              Contact Me
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+            <Link
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-700 rounded-full font-semibold text-base sm:text-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors"
+            >
+              My CV
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

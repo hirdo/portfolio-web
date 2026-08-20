@@ -1,129 +1,160 @@
 "use client";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { ModeToggle } from "./theme-btn";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { Moon, Sun, Menu, X } from "lucide-react";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+const Header = () => {
+  const [nav, setNav] = useState(false);
+  const [theme, setTheme] = useState("light");
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
+  const toggleNav = () => setNav(!nav);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
   };
 
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Projects", href: "/projects" },
-    { name: "Blogs", href: "/blogs" },
-    { name: "Contact", href: "/contact" },
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
+    }
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Blogs', href: '/blogs' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
-    <header className="header_wrapper px-4 lg:px-12 z-20 py-4 bg-white lg:bg-background/50 border-b sticky top-0 dark:bg-gray-900/90 lg:backdrop-blur">
-      <nav className="w-full">
-        <div className="flex justify-between items-center ">
-          {/* Brand Name */}
-          <Link href="/">
-            <div className="text-3xl uppercase font-bold text-primary dark:text-white">
-              Hirdo
+    <>
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg shadow-sm border-b border-gray-200/50 dark:border-gray-800/50'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5 group">
+            {/* Logo Text */}
+            <div className="flex items-baseline">
+              <span className="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#1E90FF] to-[#FF1493]">
+                Hirdo
+              </span>
+              <span className="ml-0.5 w-2 h-2 rounded-full bg-gradient-to-r from-[#1E90FF] to-[#FF1493] animate-pulse" />
             </div>
           </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden"
-            onClick={toggleNavbar}
-            aria-label="Toggle navigation"
-          >
-            <FontAwesomeIcon
-              icon={isOpen ? faTimes : faBars}
-              size="xl"
-              className="text-primary dark:text-white"
-            />
-          </button>
-
-          {/* Desktop Navbar */}
-          <ul className="hidden lg:flex flex-row space-x-6">
-            {links.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.href}
-                  className={`text-lg pb-2 border-b-2 ${
-                    pathname === link.href || (pathname === "/" && link.href === "/")
-                      ? "border-primary text-primary dark:text-white"
-                      : "border-transparent hover:border-primary dark:hover:border-white"
-                  } transition duration-300`}
-                >
-                  {link.name}
-                </Link>
-              </li>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="relative px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 rounded-lg hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 capitalize"
+              >
+                {item.label}
+              </Link>
             ))}
-          </ul>
+          </div>
 
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex gap-4">
-            <a
+          {/* Right Actions */}
+          <div className="hidden md:flex items-center gap-2">
+            {/* Download CV Button */}
+            <Link
               href="/Resume.pdf"
-              className="text-base font-semibold py-1 px-3 border-2 bg-transparent border-gradient bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-pink-600 transition-all duration-300"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1E90FF] to-[#FF1493] text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 transition-all duration-300"
             >
+              <FontAwesomeIcon icon={faDownload} className="text-xs" />
               Download CV
-            </a>
-            <ModeToggle />
+            </Link>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+            >
+              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
+          </div>
+
+          {/* Mobile Controls */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+            >
+              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
+            <button
+              onClick={toggleNav}
+              aria-label="Toggle menu"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+            >
+              {nav ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
-
-        {/* Mobile Navbar */}
-        {isOpen && (
-          <div className="fixed inset-0 bg-white dark:bg-gray-900 dark:bg-opacity-90 flex flex-col justify-start items-center pt-16 z-50">
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-primary dark:text-white"
-              onClick={toggleNavbar}
-            >
-              <FontAwesomeIcon icon={faTimes} size="xl" />
-            </button>
-
-            {/* Logo */}
-            <div className="text-3xl uppercase font-bold text-primary dark:text-white mb-6">
-              Hirdo
-            </div>
-
-            {/* Links */}
-            <ul className="flex flex-col space-y-6 text-center">
-              {links.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.href}
-                    className={`text-lg font-medium ${
-                      pathname === link.href || (pathname === "/" && link.href === "/")
-                        ? "text-primary dark:text-white"
-                        : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white"
-                    }`}
-                    onClick={toggleNavbar}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="/Resume.pdf"
-                  className="text-base font-semibold py-2 px-4 rounded-lg border-2 bg-transparent border-gradient bg-gradient-to-r from-blue-700 to-pink-700 text-transparent bg-clip-text hover:bg-gradient-to-r hover:from-blue-700 hover:to-pink-700 hover:text-white transition-all duration-300 ease-in-out"
-                  download
-                >
-                  Download CV
-                </a>
-              </li>
-            </ul>
-          </div>
-        )}
       </nav>
-    </header>
+
+      {/* Mobile Menu Overlay */}
+      {nav && (
+        <div className="fixed inset-0 z-40 bg-white dark:bg-gray-950 md:hidden">
+          <div className="flex flex-col items-center justify-center h-full gap-6">
+            {navItems.map((item, i) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setNav(false)}
+                className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors capitalize"
+                style={{ animationDelay: `${i * 50}ms` }}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setNav(false)}
+              className="mt-4 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1E90FF] to-[#FF1493] text-white font-semibold rounded-full"
+            >
+              <FontAwesomeIcon icon={faDownload} />
+              Download CV
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
   );
-}
+};
+
+export default Header;
