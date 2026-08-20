@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
@@ -28,7 +29,9 @@ export default function RootLayout({ children }) {
         >
           {children}
         </ThemeProvider>
-        <LoadingSpinner />
+        <Suspense fallback={null}>
+          <LoadingSpinner />
+        </Suspense>
       </body>
     </html>
   );
