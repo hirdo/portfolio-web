@@ -1,115 +1,137 @@
-import Navbar from "../components/Header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Navbar from '../components/Header';
+import Footer from '../components/Contact';
+import Copyright from '../components/Copyright';
+import PageHero from '../components/PageHero';
+import ContactForm from '../components/ContactForm';
+import ContactInfoCard from '../components/ContactInfoCard';
+import ScrollReveal from '../components/ScrollReveal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
   faGithub,
   faFacebook,
   faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
-import Footer from "../components/Contact";
-import Copyright from "../components/Copyright";
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 
-const ContactPage = () => {
+const contactInfo = [
+  {
+    icon: faPhone,
+    label: 'Phone',
+    value: '+84 943469258',
+    href: 'tel:+84943469258',
+  },
+  {
+    icon: faEnvelope,
+    label: 'Email',
+    value: 'huynhtien9258@gmail.com',
+    href: 'mailto:huynhtien9258@gmail.com',
+  },
+  {
+    icon: faMapMarkerAlt,
+    label: 'Location',
+    value: 'Ho Chi Minh City, Viet Nam',
+    href: 'https://maps.google.com/?q=Ho+Chi+Minh+City,Viet+Nam',
+  },
+];
+
+const socialLinks = [
+  { icon: faLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/hirdo/' },
+  { icon: faGithub, label: 'GitHub', href: 'https://github.com/hirdo' },
+  { icon: faFacebook, label: 'Facebook', href: '#' },
+  { icon: faInstagram, label: 'Instagram', href: '#' },
+];
+
+export default function ContactPage() {
   return (
-    <>
+    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
       <Navbar />
-      <div className="bg-black dark:bg-gray-900 text-center py-16">
-        <h1 className="text-4xl font-bold text-white">Contact us</h1>
-        <p className="text-xl text-white mt-4">
-          Check out some of my details for contact me.
-        </p>
-      </div>
-      <section className="py-16 px-4 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8 p-8 bg-white dark:bg-gray-800 rounded-lg relative border-2 dark:border-gray-700">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
-              Get in Touch
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-              Have a question or want to work together? Connect with me through
-              the following details.
-            </p>
-            <div className="space-y-4">
-              <div className="flex items-center text-gray-700 dark:text-gray-300">
-                <FontAwesomeIcon icon={faPhone} className="mr-4" />
-                <span>+84 943469258</span>
-              </div>
-              <div className="flex items-center text-gray-700 dark:text-gray-300">
-                <FontAwesomeIcon icon={faEnvelope} className="mr-4" />
-                <span>huynhtien9258@gmail.com</span>
-              </div>
-              <div className="flex items-center text-gray-700 dark:text-gray-300">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-4" />
-                <span>Ho Chi Minh City, Viet Nam</span>
-              </div>
-            </div>
-            <div className="border-t dark:border-gray-700 mt-6 pt-4">
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-                Follow Me
-              </h3>
-              <div className="flex space-x-6 text-2xl text-gray-600 dark:text-gray-400">
-                <a
-                  href=""
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform transform hover:scale-110"
-                >
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/hirdo-nguyen/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform transform hover:scale-110"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a
-                  href="https://github.com/hirdo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform transform hover:scale-110"
-                >
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
-                <a
-                  href=""
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform transform hover:scale-110"
-                >
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-              </div>
-            </div>
-            <div className="absolute -top-10 -right-10 bg-[#f5f5f5] dark:bg-gray-700 rounded-full w-40 h-40 opacity-20"></div>
-          </div>
 
-          {/* Google Map */}
-          <div className="p-8 bg-white dark:bg-gray-800 rounded-lg border-2 dark:border-gray-700">
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-              Find Us
-            </h2>
-            <div className="relative">
+      <PageHero
+        title="Get In Touch"
+        subtitle="Have a question or want to collaborate? Drop me a message."
+      />
+
+      <main className="py-16 px-4 lg:px-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-5 gap-12">
+            {/* Contact Form - Left */}
+            <div className="lg:col-span-3">
+              <ScrollReveal>
+                <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-10 border border-gray-200 dark:border-gray-700 shadow-md">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    Send a Message
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">
+                    Fill out the form below and I will get back to you as soon as possible.
+                  </p>
+                  <ContactForm />
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Contact Info - Right */}
+            <div className="lg:col-span-2 space-y-6">
+              <ScrollReveal delay={100}>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Contact Information
+                </h2>
+              </ScrollReveal>
+
+              <div className="space-y-4">
+                {contactInfo.map((info, index) => (
+                  <ScrollReveal key={index} delay={150 + index * 80}>
+                    <ContactInfoCard {...info} />
+                  </ScrollReveal>
+                ))}
+              </div>
+
+              <ScrollReveal delay={400}>
+                <div className="pt-4">
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
+                    Follow Me
+                  </p>
+                  <div className="flex gap-3">
+                    {socialLinks.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        className="w-10 h-10 rounded-full border-2 border-gray-900 dark:border-white flex items-center justify-center text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300"
+                      >
+                        <FontAwesomeIcon icon={social.icon} className="text-sm" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Map Section */}
+      <section className="px-4 lg:px-12 pb-16">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
               <iframe
-                title="Google Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501726.5403816782!2d106.36556114141695!3d10.754666352882103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ecb1a8d0dd1%3A0xee5d5aa1773c112b!2zVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s"
-                className="w-full h-96 border-0 rounded-lg"
-                allowFullScreen=""
+                title="My Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501575.5639084257!2d106.45938137226563!3d10.980612700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f38f9ed887b%3A0x14aded570258fe00!2sHo%20Chi%20Minh%20City%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                className="w-full h-72 border-0"
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+              />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <Footer />
       <Copyright />
-    </>
+    </div>
   );
-};
-
-export default ContactPage;
+}

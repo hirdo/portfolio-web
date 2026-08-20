@@ -1,70 +1,21 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope, faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faAddressCard,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faInstagram,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [status, setStatus] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("Form submitted");  // Check if this logs in the console
-    setStatus("Submitting...");
-
-    // Client-side validation
-    if (!/^\d{10,15}$/.test(formData.phone)) {
-      setStatus("Phone number must be 10-15 digits long");
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setStatus("Invalid email format");
-      return;
-    }
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-      console.log(result);  // Log response for debugging
-
-      if (response.status === 201) {
-        setStatus("Form submitted successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form
-      } else {
-        setStatus(result.error || "Error submitting form");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setStatus("Failed to submit the form. Please try again.");
-    }
-  };
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 px-6 lg:px-12 border-t-2 bg-slate-100 dark:bg-gray-800">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-16 px-6 lg:px-12 border-t-2 bg-slate-100 dark:bg-gray-800">
       {/* NavLinks Section */}
       <div className="text-center md:text-left">
         <h2 className="text-2xl font-bold mb-6 sm:text-xl text-gray-800 dark:text-white">
@@ -105,79 +56,48 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Form Section */}
-      <div className="md:col-span-2">
-        <h2 className="text-2xl font-bold mb-6 sm:text-xl text-center md:text-left text-gray-800 dark:text-white">
-          For Queries, Fill out the form
+      {/* Follow Me / Social Section */}
+      <div className="text-center md:text-left">
+        <h2 className="text-2xl font-bold mb-6 sm:text-xl text-gray-800 dark:text-white">
+          Follow me
         </h2>
-        <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            <input
-              className="shadow appearance-none border rounded py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="name"
-              type="text"
-              placeholder="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              className="shadow appearance-none border rounded py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email"
-              type="email"
-              placeholder="Email Address"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="phone"
-              type="text"
-              placeholder="Phone Number"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              pattern="^\d{10,15}$" // Allows 10 to 15 digits
-              title="Phone number must be 10-15 digits long"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <textarea
-              className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="message"
-              placeholder="Message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          <div className="mt-4 text-center md:text-left">
-            <button
-              type="submit"
-              disabled={status === "Submitting..."}
-              className={`relative outline px-6 py-2 rounded-lg font-semibold transition-all duration-500 ease-in-out ${
-                status === "Submitting..." ? "bg-gray-400" : "bg-transparent"
-              }`}
-            >
-              Submit
-              <span className="absolute top-1/2 right-3 transform -translate-y-1/2 opacity-0 hover:opacity-100 hover:translate-x-3 transition-all duration-500 ease-in-out">
-                →
-              </span>
-            </button>
-          </div>
-        </form>
-        {status && (
-          <p className={status.startsWith("Failed") ? "text-red-500" : "text-green-500"}>
-            {status}
-          </p>
-        )}
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          Stay connected and follow my latest work and updates on social media.
+        </p>
+        <div className="flex items-center gap-4 justify-center md:justify-start">
+          <a
+            href="https://www.linkedin.com/in/huynhtien..."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white hover:dark:bg-blue-600 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className="text-lg" />
+          </a>
+          <a
+            href="https://github.com/hirdo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white hover:dark:bg-gray-900 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <FontAwesomeIcon icon={faGithub} className="text-lg" />
+          </a>
+          <a
+            href="#"
+            aria-label="Instagram"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <FontAwesomeIcon icon={faInstagram} className="text-lg" />
+          </a>
+          <a
+            href="#"
+            aria-label="Facebook"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-700 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <FontAwesomeIcon icon={faFacebook} className="text-lg" />
+          </a>
+        </div>
       </div>
     </div>
   );

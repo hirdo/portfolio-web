@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 // Load Poppins font with specified weights
 const poppins = Poppins({
@@ -27,6 +29,9 @@ export default function RootLayout({ children }) {
         >
           {children}
         </ThemeProvider>
+        <Suspense fallback={null}>
+          <LoadingSpinner />
+        </Suspense>
       </body>
     </html>
   );
