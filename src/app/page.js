@@ -6,7 +6,6 @@ import Project from "./components/Project";
 import Cards from "./components/Cards";
 import Contact from "./components/Contact";
 import Copyright from "./components/Copyright";
-import ScrollToTop from "./components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
       <Cards />
       <Contact />
       <Copyright />
-      <ScrollToTop />
     </>
   );
 }

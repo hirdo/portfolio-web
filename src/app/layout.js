@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
 import LoadingSpinner from "./components/LoadingSpinner";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Load Poppins font with specified weights
 const poppins = Poppins({
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         >
           {children}
         </ThemeProvider>
+        <ScrollToTop />
         <Suspense fallback={null}>
           <LoadingSpinner />
         </Suspense>
