@@ -92,18 +92,26 @@ export default function ContactPage() {
                     Follow Me
                   </p>
                   <div className="flex gap-3">
-                    {socialLinks.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={social.label}
-                        className="w-10 h-10 rounded-full border-2 border-gray-900 dark:border-white flex items-center justify-center text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300"
-                      >
-                        <FontAwesomeIcon icon={social.icon} className="text-sm" />
-                      </a>
-                    ))}
+                    {socialLinks.map((social) => {
+                      const brandClasses = {
+                        LinkedIn: 'hover:bg-blue-600 dark:hover:bg-blue-600',
+                        GitHub: 'hover:bg-gray-900 dark:hover:bg-gray-900',
+                        Facebook: 'hover:bg-blue-700 dark:hover:bg-blue-700',
+                        Instagram: 'hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 dark:hover:bg-gradient-to-tr dark:hover:from-yellow-400 dark:hover:via-red-500 dark:hover:to-purple-600',
+                      }[social.label];
+                      return (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={social.label}
+                          className={`w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 flex items-center justify-center ${brandClasses} hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5`}
+                        >
+                          <FontAwesomeIcon icon={social.icon} className="text-sm" />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </ScrollReveal>

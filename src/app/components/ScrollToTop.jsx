@@ -29,7 +29,7 @@ const ScrollToTop = () => {
       } hover:scale-110`}
       onClick={scrollToTop}
     >
-      <a href="#home" className="flex items-center justify-center h-full">
+      <a className="flex items-center justify-center h-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

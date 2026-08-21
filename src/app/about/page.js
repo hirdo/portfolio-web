@@ -66,15 +66,18 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
-                <div className="relative">
-                  <div className="absolute -inset-3 bg-gradient-to-br from-blue-500 to-pink-500 rounded-2xl opacity-20 blur-xl" />
-                  <Image
-                    src="/hirdo.png"
-                    alt="Hirdo - Frontend Developer"
-                    width={400}
-                    height={500}
-                    className="relative w-full max-w-md mx-auto rounded-2xl object-cover shadow-xl aspect-[4/5]"
-                  />
+                <div className="flex justify-center">
+                  <div className="relative p-3 rounded-full bg-gradient-to-br from-amber-400 via-rose-500 to-purple-600 shadow-2xl shadow-rose-500/20 transition-transform duration-500 hover:scale-105">
+                    <div className="rounded-full overflow-hidden bg-gray-100 dark:bg-gray-900 p-2">
+                      <Image
+                        src="/avatar.png"
+                        alt="Hirdo - Frontend Developer"
+                        width={400}
+                        height={400}
+                        className="rounded-full w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
 

@@ -70,7 +70,7 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white hover:dark:bg-blue-600 transition-all duration-300 hover:-translate-y-0.5"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             <FontAwesomeIcon icon={faLinkedin} className="text-lg" />
           </a>
@@ -79,21 +79,21 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-900 hover:text-white hover:dark:bg-gray-900 transition-all duration-300 hover:-translate-y-0.5"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-900 dark:hover:bg-gray-900 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             <FontAwesomeIcon icon={faGithub} className="text-lg" />
           </a>
           <a
             href="#"
             aria-label="Instagram"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 dark:hover:bg-gradient-to-tr dark:hover:from-yellow-400 dark:hover:via-red-500 dark:hover:to-purple-600 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             <FontAwesomeIcon icon={faInstagram} className="text-lg" />
           </a>
           <a
             href="#"
             aria-label="Facebook"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-700 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-700 dark:hover:bg-blue-700 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             <FontAwesomeIcon icon={faFacebook} className="text-lg" />
           </a>

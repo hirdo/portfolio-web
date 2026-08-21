@@ -115,10 +115,10 @@ export default function MainPage() {
         <ScrollReveal delay={300}>
           <div className="flex justify-center gap-4 mb-8">
             {[
-              { icon: faFacebookF, link: "#", label: "Facebook", bg: "hover:bg-blue-600" },
-              { icon: faInstagram, link: "#", label: "Instagram", bg: "hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 hover:text-white" },
-              { icon: faGithub, link: "https://github.com/hirdo", label: "GitHub", bg: "hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900" },
-              { icon: faLinkedinIn, link: "https://www.linkedin.com/in/hirdo-nguyen/", label: "LinkedIn", bg: "hover:bg-blue-700" },
+              { icon: faFacebookF, link: "#", label: "Facebook", bg: "hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white dark:hover:text-white" },
+              { icon: faInstagram, link: "#", label: "Instagram", bg: "hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 dark:hover:bg-gradient-to-tr dark:hover:from-yellow-400 dark:hover:via-red-500 dark:hover:to-purple-600 hover:text-white dark:hover:text-white" },
+              { icon: faGithub, link: "https://github.com/hirdo", label: "GitHub", bg: "hover:bg-gray-900 dark:hover:bg-gray-900 hover:text-white dark:hover:text-white" },
+              { icon: faLinkedinIn, link: "https://www.linkedin.com/in/hirdo-nguyen/", label: "LinkedIn", bg: "hover:bg-blue-700 dark:hover:bg-blue-700 hover:text-white dark:hover:text-white" },
             ].map((social, idx) => (
               <a
                 key={idx}

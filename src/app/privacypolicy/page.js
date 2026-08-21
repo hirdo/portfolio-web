@@ -4,7 +4,7 @@ import Copyright from '../components/Copyright';
 
 const PrivacyPolicy = () => {
   return (
-    <>
+    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
       <Header />
       <div className="container mx-auto py-12 px-6">
         <h1 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Privacy Policy</h1>
@@ -69,7 +69,7 @@ const PrivacyPolicy = () => {
       </div>
       <Footer />
       <Copyright />
-    </>
+    </div>
   );
 };
 
