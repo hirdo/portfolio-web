@@ -147,7 +147,7 @@ export default function MainPage() {
               </svg>
             </Link>
             <Link
-              href="/Resume.pdf"
+              href="https://flowcv.com/resume/4gbv23ihjp9u"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-700 rounded-full font-semibold text-base sm:text-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors"
