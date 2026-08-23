@@ -2,9 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPalette,
   faPlug,
-  faSearch,
-  faChartSimple,
+  faRobot,
   faLaptopCode,
+  faMobileScreen,
+  faShieldHalved,
+  faServer,
+  faCloudArrowUp
 } from "@fortawesome/free-solid-svg-icons";
 import { faBlogger } from "@fortawesome/free-brands-svg-icons";
 import ScrollReveal from "./ScrollReveal";
@@ -34,34 +37,46 @@ const Services = () => {
                 "Professional web development services, creating responsive and visually appealing websites tailored to your business needs.",
             },
             {
-              icon: faPalette,
-              title: "Web Design",
+              icon: faMobileScreen,
+              title: "Mobile Development",
               description:
-                "Visually engaging and responsive web designs that align with your brand, providing a user-friendly experience.",
+                "Custom mobile applications for iOS and Android, providing seamless user experiences across all devices.",
             },
             {
-              icon: faBlogger,
-              title: "Blogging",
+              icon: faShieldHalved,
+              title: "Security & Maintenance",
               description:
-                "Responsive blog layouts that enhance readability and user interaction, ensuring seamless performance across devices.",
+                "Integrated login management like SSO, MFA to ensure security and regular maintenance to keep your website safe and performing at its best.",
+            },
+            {
+              icon: faCloudArrowUp,
+              title: "Cloud & DevOps Deployment",
+              description:
+                "Setting up automated CI/CD pipelines, cloud environments, and hosting configurations to ensure seamless, reliable, and fast software releases.",
+            },
+            {
+              icon: faRobot,
+              title: "AI & Automation Integration",
+              description:
+                "Integrating smart AI capabilities and automation technologies to streamline processes and enhance user experience.",
+            },
+            {
+              icon: faServer,
+              title: "Backend & Database Architecture",
+              description:
+                "Designing scalable backend systems, secure database schemas, and serverless architectures to power complex application logic efficiently.",
+            },
+            {
+              icon: faPalette,
+              title: "App Design",
+              description:
+                "Visually engaging and responsive app designs that align with your brand, providing a user-friendly experience.",
             },
             {
               icon: faPlug,
               title: "API Integration",
               description:
-                "Integrating APIs to enhance website functionality and connect with external services using clean and efficient code.",
-            },
-            {
-              icon: faSearch,
-              title: "SEO-Friendly Code",
-              description:
-                "SEO-friendly code to improve your website&apos;s visibility on search engines, ensuring better indexing and higher rankings.",
-            },
-            {
-              icon: faChartSimple,
-              title: "Performance Optimization",
-              description:
-                "Performance optimization techniques to enhance website speed and efficiency, creating fast and responsive sites.",
+                "Integrating APIs to enhance functionality and connect with external services using clean and efficient code.",
             },
           ].map((service, index) => (
             <ScrollReveal key={index} delay={index * 80}>

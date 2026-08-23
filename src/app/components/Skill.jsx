@@ -22,7 +22,7 @@ const data = [
     { title: "Node.js", icon: faNode, col: "text-green-400", desc: "Server-side JS" },
     { title: "Git & GitHub", icon: faGitAlt, col: "text-red-500", desc: "Version control" },
     { title: "Tailwind CSS", icon: faBootstrap, col: "text-blue-300", desc: "Utility-first" },
-    { title: "Python", icon: faPython, col: "text-yellow-400", desc: "Scripting & data" },
+    { title: "Python", icon: faPython, col: "text-blue-400", desc: "Scripting & data" },
 ];
 
 export default function Skills() {

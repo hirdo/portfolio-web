@@ -66,7 +66,7 @@ export default function Contact() {
         </p>
         <div className="flex items-center gap-4 justify-center md:justify-start">
           <a
-            href="https://www.linkedin.com/in/huynhtien..."
+            href="https://www.linkedin.com/in/hirdo-nguyen/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -84,14 +84,18 @@ export default function Contact() {
             <FontAwesomeIcon icon={faGithub} className="text-lg" />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/hirdo_tien"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 dark:hover:bg-gradient-to-tr dark:hover:from-yellow-400 dark:hover:via-red-500 dark:hover:to-purple-600 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             <FontAwesomeIcon icon={faInstagram} className="text-lg" />
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/hirdo.nguyen"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Facebook"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-700 dark:hover:bg-blue-700 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >

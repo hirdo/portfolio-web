@@ -20,9 +20,11 @@ export default function MainPage() {
   const [isDeleting, setIsDeleting] = useState(false);
   const roles = useMemo(
     () => [
-      "Frontend Developer",
-      "React Developer",
-      "UI/UX Designer",
+      "Software Engineer",
+      "Fullstack Developer",
+      "Mobile Developer",
+      "Website Designer",
+      "Security Champion",
       "Blogger",
     ],
     []
@@ -105,9 +107,8 @@ export default function MainPage() {
 
         <ScrollReveal delay={200}>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
-            Passionate about designing and developing digital solutions that
-            resonate. Let&apos;s collaborate to create impactful experiences that
-            inspire and connect.
+            Passionate about design and crafting robust full-stack applications and intelligent software solutions.
+            Let&apos;s collaborate to create impactful experiences that inspire and connect.
           </p>
         </ScrollReveal>
 
@@ -115,10 +116,10 @@ export default function MainPage() {
         <ScrollReveal delay={300}>
           <div className="flex justify-center gap-4 mb-8">
             {[
-              { icon: faFacebookF, link: "#", label: "Facebook", bg: "hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white dark:hover:text-white" },
-              { icon: faInstagram, link: "#", label: "Instagram", bg: "hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 dark:hover:bg-gradient-to-tr dark:hover:from-yellow-400 dark:hover:via-red-500 dark:hover:to-purple-600 hover:text-white dark:hover:text-white" },
-              { icon: faGithub, link: "https://github.com/hirdo", label: "GitHub", bg: "hover:bg-gray-900 dark:hover:bg-gray-900 hover:text-white dark:hover:text-white" },
               { icon: faLinkedinIn, link: "https://www.linkedin.com/in/hirdo-nguyen/", label: "LinkedIn", bg: "hover:bg-blue-700 dark:hover:bg-blue-700 hover:text-white dark:hover:text-white" },
+              { icon: faGithub, link: "https://github.com/hirdo", label: "GitHub", bg: "hover:bg-gray-900 dark:hover:bg-gray-900 hover:text-white dark:hover:text-white" },
+              { icon: faInstagram, link: "https://www.instagram.com/hirdo_tien", label: "Instagram", bg: "hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 dark:hover:bg-gradient-to-tr dark:hover:from-yellow-400 dark:hover:via-red-500 dark:hover:to-purple-600 hover:text-white dark:hover:text-white" },
+              { icon: faFacebookF, link: "https://www.facebook.com/hirdo.nguyen", label: "Facebook", bg: "hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white dark:hover:text-white" },
             ].map((social, idx) => (
               <a
                 key={idx}
