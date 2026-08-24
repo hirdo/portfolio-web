@@ -14,38 +14,42 @@ import Card from '../components/Card';
 import CertModal from '../components/CertModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCode, faLaptopCode, faDraftingCompass, faLayerGroup,
+  faLaptopCode, faServer, faLanguage,
   faDatabase, faCloud, faShieldAlt, faProjectDiagram, faFileDownload, faEye
 } from '@fortawesome/free-solid-svg-icons';
-import { faHtml5, faCss3Alt, faJsSquare, faReact, faBootstrap, faSass, faGit, faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import { faPhp, faPython, faNodeJs, faHtml5, faCss3Alt, faJsSquare, faReact, faJava, faAngular, faFlutter, faDocker, faJenkins } from '@fortawesome/free-brands-svg-icons';
 
 const stats = [
-  { target: 1, suffix: '+', label: 'Years Experience' },
+  { target: 3, suffix: '+', label: 'Years Experience' },
   { target: 6, suffix: '+', label: 'Projects Completed' },
   { target: 5, suffix: '+', label: 'Happy Clients' },
-  { target: 8, suffix: '+', label: 'Certifications' },
+  { target: 2, suffix: '+', label: 'Certifications' },
 ];
 
 const certifications = [
-  { icon: faCode, title: 'JavaScript Course', image: '/certificate.jpg' },
-  { icon: faLaptopCode, title: 'React.js Course', image: '/certificate.jpg' },
-  { icon: faDraftingCompass, title: 'Tailwind CSS Course', image: '/certificate.jpg' },
-  { icon: faLayerGroup, title: 'Modern HTML Course', image: '/certificate.jpg' },
-  { icon: faDatabase, title: 'MongoDB Course', image: '/certificate.jpg' },
-  { icon: faCloud, title: 'Git & GitHub Course', image: '/certificate.jpg' },
-  { icon: faShieldAlt, title: 'SEO for Beginners', image: '/certificate.jpg' },
-  { icon: faProjectDiagram, title: 'Generative AI Course', image: '/certificate.jpg' },
+  { icon: faLaptopCode, title: 'Backend Course', image: '/certificate.jpg' },
+  { icon: faServer, title: 'Frontend Course' },
+  { icon: faDatabase, title: 'Database Course' },
+  { icon: faCloud, title: 'DevOps Course' },
+  { icon: faShieldAlt, title: 'Security Course' },
+  { icon: faProjectDiagram, title: 'AI Course' },
+  { icon: faLanguage, title: 'IELTS Course', image: '/IELTS.jpg' },
+  { icon: faLanguage, title: 'TOEIC Course', image: '/TOEIC.jpg' },
 ];
 
 const skills = [
-  { name: 'HTML5', icon: faHtml5 },
-  { name: 'CSS3', icon: faCss3Alt },
-  { name: 'JavaScript', icon: faJsSquare },
-  { name: 'React.js', icon: faReact },
-  { name: 'Bootstrap', icon: faBootstrap },
-  { name: 'Sass', icon: faSass },
-  { name: 'Git', icon: faGit },
-  { name: 'Node.js', icon: faNodeJs },
+  { name: 'HTML5', icon: faHtml5, col: 'text-orange-500' },
+  { name: 'CSS3', icon: faCss3Alt, col: 'text-blue-400' },
+  { name: 'JavaScript', icon: faJsSquare, col: 'text-yellow-300' },
+  { name: 'React.js', icon: faReact, col: 'text-cyan-400' },
+  { name: 'PHP', icon: faPhp, col: 'text-purple-500' },
+  { name: 'Node.js', icon: faNodeJs, col: 'text-green-400' },
+  { name: 'Python', icon: faPython, col: 'text-blue-400' },
+  { name: 'Java', icon: faJava, col: 'text-red-500' },
+  { name: 'Angular', icon: faAngular, col: 'text-red-500' },
+  { name: 'Flutter', icon: faFlutter, col: 'text-cyan-400' },
+  { name: 'Docker', icon: faDocker, col: 'text-blue-500' },
+  { name: 'Jenkins', icon: faJenkins, col: 'text-white' },
 ];
 
 export default function AboutPage() {
@@ -88,17 +92,12 @@ export default function AboutPage() {
                   </h2>
                   <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                     <p>
-                      Hello! I am <span className="font-semibold text-gray-900 dark:text-white">Hirdo</span>, a passionate Frontend Developer with
-                      one year of hands-on experience in creating stunning, responsive, and user-friendly web applications.
+                      Hello! I am <span className="font-semibold text-gray-900 dark:text-white">Hirdo</span>, a passionate <span className="text-blue-600 dark:text-blue-400 font-medium">Software Engineer</span> with
+                      more than <span className="font-bold text-gray-900 dark:text-white">3 years</span> of experience in creating stunning, responsive, and user-friendly app applications and <span className="font-bold text-gray-900 dark:text-white">1 year</span> of <span className="text-blue-600 dark:text-blue-400 font-medium">Security Champion</span> experience.
                     </p>
                     <p>
                       I specialize in transforming creative ideas into visually appealing digital experiences using
-                      <span className="text-blue-600 dark:text-blue-400 font-medium"> HTML</span>,
-                      <span className="text-blue-600 dark:text-blue-400 font-medium"> CSS</span>,
-                      <span className="text-blue-600 dark:text-blue-400 font-medium"> JavaScript</span>,
-                      and modern frameworks like
-                      <span className="text-blue-600 dark:text-blue-400 font-medium"> React</span> and
-                      <span className="text-blue-600 dark:text-blue-400 font-medium"> Next.js</span>.
+                      modern technologies and improve security practices.
                     </p>
                     <p>
                       With a keen eye for design and a love for clean code, I aim to deliver seamless and engaging user experiences
@@ -139,7 +138,7 @@ export default function AboutPage() {
 
         {/* Certifications Section */}
         <section className="py-16 px-4 lg:px-12">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-[1400px] w-full mx-auto">
             <ScrollReveal>
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
@@ -151,46 +150,56 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {certifications.map((cert, index) => (
-                <ScrollReveal key={index} delay={index * 80}>
-                  <button
-                    onClick={() => setSelectedCert(cert)}
-                    className="w-full text-left group"
-                  >
-                    <Card className="text-center p-0 overflow-hidden group-hover:shadow-xl transition-shadow duration-300">
-                      <div className="relative w-full h-48 overflow-hidden">
-                        {cert.image ? (
-                          <Image
-                            src={cert.image}
-                            alt={cert.title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                          />
-                        ) : (
-                          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-500/5 to-pink-500/5">
-                            <FontAwesomeIcon
-                              icon={cert.icon}
-                              className="text-5xl text-blue-500/20 dark:text-blue-400/20"
+            <div className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                {certifications.map((cert, index) => (
+                  <ScrollReveal key={index} delay={index * 80}>
+                    <button
+                      onClick={() => setSelectedCert(cert)}
+                      className="w-full text-left group focus:outline-none"
+                    >
+                      <Card className="relative overflow-hidden bg-white dark:bg-slate-800/90 p-4 pb-5 rounded-2xl flex flex-col items-center shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700/60">
+
+                        <div className="relative w-full aspect-video mb-4 overflow-hidden rounded-xl border border-gray-100 dark:border-slate-600/50 bg-gray-50 dark:bg-slate-700/50">
+                          {cert.image ? (
+                            <Image
+                              src={cert.image}
+                              alt={cert.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                          </div>
-                        )}
-                        {/* Overlay on hover */}
-                        <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/40 transition-all duration-300 flex items-center justify-center">
-                          <div className="opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300">
-                            <div className="w-12 h-12 rounded-full bg-white/90 dark:bg-gray-900/90 flex items-center justify-center shadow-lg">
-                              <FontAwesomeIcon icon={faEye} className="text-gray-900 dark:text-white text-sm" />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <FontAwesomeIcon
+                                icon={cert.icon}
+                                className="text-7xl text-gray-300 dark:text-slate-500"
+                              />
+                            </div>
+                          )}
+
+                          {/* Overlay khi hover */}
+                          <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/40 transition-all duration-300 flex items-center justify-center">
+                            <div className="opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300">
+                              <div className="w-16 h-16 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-lg">
+                                <FontAwesomeIcon icon={faEye} className="text-gray-900 dark:text-white text-xl" />
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="p-4">
-                        <h3 className="font-semibold text-gray-900 dark:text-white text-sm">{cert.title}</h3>
-                      </div>
-                    </Card>
-                  </button>
-                </ScrollReveal>
-              ))}
+
+                        {/* Title */}
+                        <div className="w-full text-center px-2">
+                          <h3 className="font-bold text-gray-600 dark:text-slate-200 text-lg md:text-xl tracking-wide transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#1E90FF] group-hover:to-[#FF1493]">
+                            {cert.title}
+                          </h3>
+                        </div>
+
+                        <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#1E90FF] to-[#FF1493] opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </Card>
+                    </button>
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -216,7 +225,7 @@ export default function AboutPage() {
               {skills.map((skill, index) => (
                 <ScrollReveal key={index} delay={index * 60}>
                   <div className="flex flex-col items-center p-6 gradient-border-card rounded-xl hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-900">
-                    <FontAwesomeIcon icon={skill.icon} className="text-5xl text-blue-600 dark:text-blue-400 mb-3" />
+                    <FontAwesomeIcon icon={skill.icon} className={`text-5xl ${skill.col} mb-3`} />
                     <span className="font-semibold text-gray-900 dark:text-white">{skill.name}</span>
                   </div>
                 </ScrollReveal>

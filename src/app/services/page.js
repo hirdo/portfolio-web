@@ -8,26 +8,85 @@ import TestimonialCard from '../components/TestimonialCard';
 import ScrollReveal from '../components/ScrollReveal';
 import GradientText from '../components/GradientText';
 import {
-  faCode, faPaintBrush, faMobileAlt, faSearch,
-  faServer, faRocket
+  faLaptopCode, faPalette, faShieldHalved, faCloudArrowUp,
+  faServer, faRobot, faMobileScreen, faPlug
 } from '@fortawesome/free-solid-svg-icons';
 
 const services = [
   {
-    icon: faCode,
+    icon: faLaptopCode,
     title: 'Web Development',
     description: 'Building robust, scalable web applications tailored to your business needs using modern frameworks and best practices.',
-    techs: ['React', 'Next.js', 'Node.js'],
+    techs: ['React', 'Angular', 'TypeScript', 'Node.js'],
     features: [
-      'Responsive & mobile-first design',
+      'Responsive design',
       'SEO-friendly architecture',
       'Performance optimization',
       'Cross-browser compatibility',
     ],
   },
   {
-    icon: faPaintBrush,
-    title: 'Web Design',
+    icon: faMobileScreen,
+    title: 'Mobile Development',
+    description: 'Creating custom mobile applications for iOS and Android platforms, ensuring seamless user experiences across all devices.',
+    techs: ['Flutter', 'Spring Boot'],
+    features: [
+      'Cross-platform development',
+      'Native performance',
+      'Push notifications',
+    ],
+  },
+  {
+    icon: faShieldHalved,
+    title: 'Security & Maintenance',
+    description: 'Implementing robust security measures, including SSO and MFA, along with regular maintenance to keep your applications secure and up-to-date.',
+    techs: ['Keycloak', 'OAuth2', 'JWT'],
+    features: [
+      'Single Sign-On (SSO) integration',
+      'Multi-Factor Authentication (MFA)',
+      'Regular security audits',
+      'System updates and patches',
+    ],
+  },
+  {
+    icon: faCloudArrowUp,
+    title: 'Cloud & DevOps Deployment',
+    description: 'Deploying and managing your applications in the cloud with efficient DevOps practices for seamless updates and scaling.',
+    techs: ['Azure', 'Docker', 'Jenkins'],
+    features: [
+      'Containerization with Docker',
+      'CI/CD pipeline setup',
+      'Domain and SSL management',
+      'Monitoring and logging',
+    ],
+  },
+  {
+    icon: faRobot,
+    title: 'AI & Automation Integration',
+    description: 'Integrating artificial intelligence and automation tools to streamline your workflows and enhance productivity.',
+    techs: ['Python', 'n8n', 'OpenAI'],
+    features: [
+      'AI-driven analytics',
+      'Automated task workflows',
+      'Process optimization',
+      'Custom AI solutions',
+    ],
+  },
+  {
+    icon: faServer,
+    title: 'Backend Development',
+    description: 'Designing and implementing robust backend systems, including APIs and database architectures, to support your applications efficiently.',
+    techs: ['Microservices', 'Superbase', 'Oracle', 'Elasticsearch'],
+    features: [
+      'RESTful API development',
+      'Database design & management',
+      'Authentication & security',
+      'Server optimization',
+    ],
+  },
+  {
+    icon: faPalette,
+    title: 'App Design',
     description: 'Creating visually stunning and user-centric designs that captivate your audience and elevate your brand identity.',
     techs: ['Figma', 'Tailwind', 'CSS3'],
     features: [
@@ -38,51 +97,15 @@ const services = [
     ],
   },
   {
-    icon: faMobileAlt,
-    title: 'Responsive Design',
-    description: 'Ensuring your website looks and functions perfectly across all devices, from mobile phones to large desktop screens.',
-    techs: ['Tailwind', 'Bootstrap', 'CSS Grid'],
+    icon: faPlug,
+    title: 'API Integration',
+    description: 'Seamlessly integrating third-party APIs to enhance functionality and create a more robust application.',
+    techs: ['REST', 'Postman'],
     features: [
-      'Mobile-first approach',
-      'Fluid layouts',
-      'Touch-friendly interactions',
-      'Device testing',
-    ],
-  },
-  {
-    icon: faSearch,
-    title: 'SEO Optimization',
-    description: 'Improving your website visibility on search engines to drive organic traffic and grow your online presence.',
-    techs: ['Next.js', 'Schema', 'Analytics'],
-    features: [
-      'On-page SEO audit',
-      'Meta tags optimization',
-      'Page speed improvements',
-      'Keyword research & integration',
-    ],
-  },
-  {
-    icon: faServer,
-    title: 'Backend Development',
-    description: 'Developing reliable server-side solutions and APIs to power your applications with secure and efficient data handling.',
-    techs: ['Node.js', 'Express', 'MongoDB'],
-    features: [
-      'RESTful API development',
-      'Database design & management',
-      'Authentication & security',
-      'Server optimization',
-    ],
-  },
-  {
-    icon: faRocket,
-    title: 'Performance Optimization',
-    description: 'Analyzing and enhancing your website speed and performance to ensure the best user experience and higher conversion rates.',
-    techs: ['Lighthouse', 'Webpack', 'SSR'],
-    features: [
-      'Core Web Vitals optimization',
-      'Image & asset optimization',
-      'Code splitting & lazy loading',
-      'Caching strategies',
+      'API design and documentation',
+      'Integration testing',
+      'Error handling and logging',
+      'Performance optimization',
     ],
   },
 ];
@@ -101,31 +124,31 @@ const faqs = [
     answer: 'Yes! I include up to 3 rounds of revisions in every project to ensure the final product meets your expectations. Additional revisions can be arranged if needed.',
   },
   {
-    question: 'What technologies do you prefer working with?',
-    answer: 'I primarily work with React, Next.js, and Tailwind CSS for frontend, and Node.js with MongoDB for backend. However, I am flexible and adapt to your specific project requirements.',
-  },
-  {
     question: 'Can you work with existing codebases?',
     answer: 'Absolutely. I can jump into existing projects, review the codebase, and add features or fix issues while following your established coding patterns and conventions.',
   },
+  {
+    question: 'What technologies do you specialize in?',
+    answer: 'I specialize in modern web technologies including React, Angular, Node.js, and cloud platforms like Azure. I also have experience with mobile development using Flutter and backend systems with microservices architecture.',
+  }
 ];
 
 // Placeholder testimonials - can be replaced with real data later
 const testimonials = [
   {
     quote: 'Working with Hirdo was a fantastic experience. The attention to detail and responsiveness throughout the project were outstanding. Our website turned out better than we imagined.',
-    name: 'Sarah Mitchell',
-    role: 'CEO, TechStart Inc.',
+    name: 'Huynh Thi Nga',
+    role: 'Business Owner',
   },
   {
     quote: 'Hirdo delivered our e-commerce platform on time and within budget. The site is fast, beautiful, and has significantly improved our conversion rates.',
-    name: 'David Chen',
-    role: 'Founder, ShopEase',
+    name: 'Tran Phuc Loi',
+    role: 'Business Owner',
   },
   {
     quote: 'I was impressed by the modern design and clean code. Communication was clear and the whole process felt very professional from start to finish.',
-    name: 'Emily Rodriguez',
-    role: 'Marketing Director, Bloom Agency',
+    name: 'Nguyen Huynh Vu Duc',
+    role: 'Client',
   },
 ];
 

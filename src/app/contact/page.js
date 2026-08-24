@@ -36,10 +36,10 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: faLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/hirdo/' },
+  { icon: faLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/hirdo-nguyen/' },
   { icon: faGithub, label: 'GitHub', href: 'https://github.com/hirdo' },
-  { icon: faFacebook, label: 'Facebook', href: '#' },
-  { icon: faInstagram, label: 'Instagram', href: '#' },
+  { icon: faInstagram, label: 'Instagram', href: 'https://www.instagram.com/hirdo_tien' },
+  { icon: faFacebook, label: 'Facebook', href: 'https://www.facebook.com/hirdo.nguyen' }, 
 ];
 
 export default function ContactPage() {
