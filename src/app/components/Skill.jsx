@@ -8,8 +8,8 @@ import {
     faJs,
     faReact,
     faNode,
-    faGitAlt,
-    faBootstrap,
+    faAngular,
+    faPhp,
     faPython,
 } from "@fortawesome/free-brands-svg-icons";
 import ScrollReveal from "./ScrollReveal";
@@ -21,8 +21,8 @@ const data = [
     { title: "JavaScript", icon: faJs, col: "text-yellow-300", desc: "Interactivity" },
     { title: "React", icon: faReact, col: "text-cyan-400", desc: "UI components" },
     { title: "Node.js", icon: faNode, col: "text-green-400", desc: "Server-side JS" },
-    { title: "Git & GitHub", icon: faGitAlt, col: "text-red-500", desc: "Version control" },
-    { title: "Tailwind CSS", icon: faBootstrap, col: "text-blue-300", desc: "Utility-first" },
+    { title: "Angular", icon: faAngular, col: "text-red-500", desc: "Framework" },
+    { title: "PHP", icon: faPhp, col: "text-purple-500", desc: "Server-side scripting" },
     { title: "Python", icon: faPython, col: "text-blue-400", desc: "Scripting & data" },
 ];
 
@@ -48,29 +48,42 @@ export default function Skills() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
                     {data.slice(0, INITIAL_COUNT).map((item, index) => (
                         <ScrollReveal key={item.title} delay={index * 60}>
-                            <div className="group flex flex-col items-center bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-700/50 mb-3 group-hover:scale-110 transition-transform duration-300">
-                                    <FontAwesomeIcon
-                                        icon={item.icon}
-                                        className={`text-3xl ${item.col}`}
-                                    />
+                            {/* 1. Wrapper ngoài: Tạo nền gradient, p-[2px] để làm độ dày viền, bọc các hiệu ứng hover/shadow */}
+                            <div className="group h-full p-[1.2px] rounded-2xl bg-gradient-to-r from-[#1E90FF] to-[#FF1493] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                                {/* 2. Thẻ Card bên trong: Nền trắng/dark, bo góc nhỏ hơn một chút (rounded-[14px]) để khớp với viền ngoài */}
+                                <div className="flex flex-col items-center bg-white dark:bg-gray-800 rounded-[16px] p-6 h-full w-full">
+                                    <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-700/50 mb-3 group-hover:scale-110 transition-transform duration-300">
+                                        <FontAwesomeIcon
+                                            icon={item.icon}
+                                            className={`text-3xl ${item.col}`}
+                                        />
+                                    </div>
+                                    <h2 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base mb-1">{item.title}</h2>
+                                    <p className="text-gray-500 dark:text-gray-500 text-xs">{item.desc}</p>
                                 </div>
-                                <h2 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base mb-1">{item.title}</h2>
-                                <p className="text-gray-500 dark:text-gray-500 text-xs">{item.desc}</p>
+
                             </div>
                         </ScrollReveal>
                     ))}
+
                     {expanded && data.slice(INITIAL_COUNT).map((item, index) => (
                         <ScrollReveal key={`expanded-${item.title}`} delay={index * 60}>
-                            <div className="group flex flex-col items-center bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-700/50 mb-3 group-hover:scale-110 transition-transform duration-300">
-                                    <FontAwesomeIcon
-                                        icon={item.icon}
-                                        className={`text-3xl ${item.col}`}
-                                    />
+                            {/* 1. Wrapper ngoài: Tạo nền gradient, p-[2px] để làm độ dày viền */}
+                            <div className="group h-full p-[2px] rounded-2xl bg-gradient-to-r from-[#1E90FF] to-[#FF1493] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                                {/* 2. Thẻ Card bên trong */}
+                                <div className="flex flex-col items-center bg-white dark:bg-gray-800 rounded-[14px] p-6 h-full w-full">
+                                    <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-700/50 mb-3 group-hover:scale-110 transition-transform duration-300">
+                                        <FontAwesomeIcon
+                                            icon={item.icon}
+                                            className={`text-3xl ${item.col}`}
+                                        />
+                                    </div>
+                                    <h2 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base mb-1">{item.title}</h2>
+                                    <p className="text-gray-500 dark:text-gray-500 text-xs">{item.desc}</p>
                                 </div>
-                                <h2 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base mb-1">{item.title}</h2>
-                                <p className="text-gray-500 dark:text-gray-500 text-xs">{item.desc}</p>
+
                             </div>
                         </ScrollReveal>
                     ))}

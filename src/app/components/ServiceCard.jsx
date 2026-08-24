@@ -11,7 +11,12 @@ export default function ServiceCard({ service, index }) {
 
   return (
     <ScrollReveal delay={index * 100}>
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+      {/* 1. Thêm relative, overflow-hidden và group vào class bọc ngoài cùng */}
+      <div className="relative overflow-hidden group bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+
+        {/* 2. Border ảo bên trái: Rộng 3px, chiều cao full, có hiệu ứng sáng lên khi hover */}
+        <div className="absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-[#1E90FF] to-[#FF1493] opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+
         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/10 to-pink-500/10 flex items-center justify-center mb-5">
           <FontAwesomeIcon
             icon={service.icon}
@@ -37,7 +42,7 @@ export default function ServiceCard({ service, index }) {
           <>
             <button
               onClick={() => setExpanded(!expanded)}
-              className="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors mt-auto"
+              className="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors mt-auto focus:outline-none"
             >
               {expanded ? 'Show Less' : 'Learn More'}
               <FontAwesomeIcon

@@ -88,7 +88,12 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesData.slice(0, INITIAL_COUNT).map((service, index) => (
             <ScrollReveal key={service.title} delay={index * 80}>
-              <div className="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+              {/* Thêm relative và overflow-hidden vào class của card */}
+              <div className="relative overflow-hidden group bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+
+                {/* Border Left Gradient: Chạy dọc bên trái với chiều rộng 4px */}
+                <div className="absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-[#1E90FF] to-[#FF1493] opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                 <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20 mb-4 group-hover:scale-110 transition-transform duration-300">
                   <FontAwesomeIcon
                     icon={service.icon}
@@ -105,9 +110,15 @@ const Services = () => {
               </div>
             </ScrollReveal>
           ))}
+
           {expanded && servicesData.slice(INITIAL_COUNT).map((service, index) => (
             <ScrollReveal key={`expanded-${service.title}`} delay={index * 80}>
-              <div className="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+              {/* Thêm relative và overflow-hidden vào class của card */}
+              <div className="relative overflow-hidden group bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+
+                {/* Border Left Gradient: Chạy dọc bên trái với chiều rộng 4px */}
+                <div className="absolute top-0 left-0 w-[4px] h-full bg-gradient-to-b from-[#1E90FF] to-[#FF1493] opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                 <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20 mb-4 group-hover:scale-110 transition-transform duration-300">
                   <FontAwesomeIcon
                     icon={service.icon}
