@@ -8,6 +8,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [errorMessage, setErrorMessage] = useState('');
 
   const validate = () => {
     const newErrors = {};
@@ -36,6 +37,7 @@ export default function ContactForm() {
     if (!validate()) return;
 
     setStatus('loading');
+    setErrorMessage('');
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -47,15 +49,17 @@ export default function ContactForm() {
           message: formData.message,
         }),
       });
-      await res.json();
+      const data = await res.json();
       if (res.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         setStatus('error');
+        setErrorMessage(data.error || 'Something went wrong. Please try again later.');
       }
     } catch {
       setStatus('error');
+      setErrorMessage('Something went wrong. Please try again later.');
     }
   };
 
@@ -141,7 +145,7 @@ export default function ContactForm() {
 
       {status === 'error' && (
         <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300 text-sm">
-          Something went wrong. Please try again later.
+          {errorMessage}
         </div>
       )}
 
