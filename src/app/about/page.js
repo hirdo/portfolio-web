@@ -49,7 +49,7 @@ const skills = [
   { name: 'Angular', icon: faAngular, col: 'text-red-500' },
   { name: 'Flutter', icon: faFlutter, col: 'text-cyan-400' },
   { name: 'Docker', icon: faDocker, col: 'text-blue-500' },
-  { name: 'Jenkins', icon: faJenkins, col: 'text-white' },
+  { name: 'Jenkins', icon: faJenkins, col: 'text-gray-500' },
 ];
 
 export default function AboutPage() {

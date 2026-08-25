@@ -77,7 +77,7 @@ const Project = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-800/30">
+    <section id="projects" className="py-16 lg:py-20 bg-gray-50 dark:bg-[#1a1a1a]">
       <div className="max-w-6xl mx-auto px-4 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-12">
