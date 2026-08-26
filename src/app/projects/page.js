@@ -20,7 +20,7 @@ const projects = [
     description:
       "A personal portfolio website showcasing skills, projects, and blog posts with modern animations.",
     link: "https://portfolio-hirdo.vercel.app/",
-    sourceLink: "https://github.com/hirdo/portfolio_website",
+    sourceLink: "https://github.com/hirdo/portfolio-web",
     tags: ["Typescript", "Tailwind", "Framer Motion"],
     category: "Portfolio",
   },
@@ -30,7 +30,7 @@ const projects = [
     description:
       "A culinary exploration platform that allows users to search, filter using AI features like and discover authentic food recipes from all around the world from image or voice.",
     link: "https://worldwide-recipe.netlify.app/",
-    sourceLink: "https://github.com/hirdo/worldwide_recipes",
+    sourceLink: "https://github.com/hirdo/worldwide-recipes-web",
     tags: ["Firebase Studio", "OpenAI", "Next.js", "Typescript"],
     category: "Guide",
   },
@@ -40,7 +40,7 @@ const projects = [
     description:
       "An online storefront designed to showcase artisanal ice cream flavors and dessert offerings for a cozy dessert brand.",
     link: "https://sweethome-icecream.vercel.app/",
-    sourceLink: "https://github.com/hirdo/sweethome-icecream",
+    sourceLink: "https://github.com/hirdo/sweethome-icecream-web",
     tags: ["Lovable", "Supabase", "Typescript"],
     category: "Food & Beverage",
   },
@@ -50,7 +50,7 @@ const projects = [
     description:
       "An online storefront for Yến Sào Mười Thiết Đào Đào, a Vietnamese brand specializing in premium, 100% pure, and naturally harvested bird's nest products.",
     link: "https://yen-sao-muoi-thiet-dao-dao.vercel.app/",
-    sourceLink: "https://github.com/hirdo/yen-sao-muoi-thiet-dao-dao",
+    sourceLink: "https://github.com/hirdo/daodao-bird-nest-web",
     tags: ["Next.js", "Typescript", "JavaScript", "Supabase"],
     category: "E-Commerce",
   },
@@ -60,7 +60,7 @@ const projects = [
     description:
       "This website serves booking platform for a local taxi service operating in the Go Cong area of Tien Giang province, Vietnam.",
     link: "https://tiengiang-gocong-taxi.vercel.app/",
-    sourceLink: "https://github.com/hirdo/tiengiang-gocong-taxi",
+    sourceLink: "https://github.com/hirdo/gocong-taxi-web",
     tags: ["Next.js", "Typescript", "JavaScript", "HTML5", "CSS3", ],
     category: "Service",
   },
