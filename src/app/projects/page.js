@@ -31,7 +31,7 @@ const projects = [
       "A culinary exploration platform that allows users to search, filter using AI features like and discover authentic food recipes from all around the world from image or voice.",
     link: "https://worldwide-recipe.netlify.app/",
     sourceLink: "https://github.com/hirdo/worldwide_recipes",
-    tags: ["Firebase Studio", "OpenAI", "Typescript", "CSS"],
+    tags: ["Firebase Studio", "OpenAI", "Next.js", "Typescript"],
     category: "Guide",
   },
   {
@@ -51,7 +51,7 @@ const projects = [
       "An online storefront for Yến Sào Mười Thiết Đào Đào, a Vietnamese brand specializing in premium, 100% pure, and naturally harvested bird's nest products.",
     link: "https://yen-sao-muoi-thiet-dao-dao.vercel.app/",
     sourceLink: "https://github.com/hirdo/yen-sao-muoi-thiet-dao-dao",
-    tags: ["Typescript", "Supabase", "JavaScript", "CSS3"],
+    tags: ["Next.js", "Typescript", "JavaScript", "Supabase"],
     category: "E-Commerce",
   },
   {
@@ -61,7 +61,7 @@ const projects = [
       "This website serves booking platform for a local taxi service operating in the Go Cong area of Tien Giang province, Vietnam.",
     link: "https://tiengiang-gocong-taxi.vercel.app/",
     sourceLink: "https://github.com/hirdo/tiengiang-gocong-taxi",
-    tags: ["HTML5", "CSS3", "JavaScript", "Typescript"],
+    tags: ["Next.js", "Typescript", "JavaScript", "HTML5", "CSS3", ],
     category: "Service",
   },
 ];
