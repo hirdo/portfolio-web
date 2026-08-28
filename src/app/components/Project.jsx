@@ -13,36 +13,36 @@ import TechBadge from './TechBadge';
 const projects = [
   {
     id: 1,
-    name: 'E-Commerce Website',
+    name: 'Icecream Website',
     description:
-      'A modern e-commerce platform featuring a responsive layout, dynamic product catalog, user-friendly cart functionality, and a secure checkout process with payment integration.',
-    tags: ['React', 'Tailwind', 'Redux', 'Stripe'],
-    liveLink: 'https://hirdo.github.io/e-commerce-website/',
-    githubLink: 'https://github.com/hirdo/e-commerce-website',
-    image: '/project (5).webp',
-    category: 'E-Commerce',
+      "An online storefront designed to showcase artisanal ice cream flavors and dessert offerings for a cozy dessert brand.",
+    tags: ["Lovable", "Supabase", "Typescript"],
+    liveLink: 'https://sweethome-icecream.vercel.app/',
+    githubLink: 'https://github.com/hirdo/sweethome-icecream',
+    image: '/project_icecream.png',
+    category: 'Food & Beverage',
   },
   {
     id: 2,
-    name: 'Clinic Website',
+    name: 'Recipe Website',
     description:
-      'A professional, user-friendly clinic website designed to provide patients with information about services, doctors, and appointment scheduling.',
-    tags: ['HTML5', 'CSS3', 'Bootstrap'],
-    liveLink: 'https://hirdo.github.io/clinic_website/',
-    githubLink: 'https://github.com/hirdo/clinic_website',
-    image: '/project (4).webp',
-    category: 'Healthcare',
+      "A culinary exploration platform that allows users to search, filter using AI features like and discover authentic food recipes from all around the world from image or voice.",
+    tags: ["Firebase Studio", "OpenAI", "Typescript", "CSS"],
+    liveLink: 'https://worldwide-recipe.netlify.app/',
+    githubLink: 'https://github.com/hirdo/worldwide_recipes',
+    image: '/project_recipe.png',
+    category: 'Guide',
   },
   {
     id: 3,
-    name: 'Portfolio Website',
+    name: "Bird's nest Selling Website",
     description:
-      'A modern portfolio site showcasing front-end projects and skills with an interactive UI. Built with performance and accessibility in mind.',
-    tags: ['Next.js', 'Tailwind', 'Framer Motion'],
-    liveLink: 'https://hirdo.github.io/portfolio/',
-    githubLink: 'https://github.com/hirdo/portfolio',
-    image: '/project (3).webp',
-    category: 'Portfolio',
+      "An online storefront for Yến Sào Mười Thiết Đào Đào, a Vietnamese brand specializing in premium, 100% pure, and naturally harvested bird's nest products.",
+    tags: ["Typescript", "Supabase", "JavaScript", "CSS3"],
+    liveLink: 'https://yen-sao-muoi-thiet-dao-dao.vercel.app/',
+    githubLink: 'https://github.com/hirdo/yen-sao-muoi-thiet-dao-dao',
+    image: '/project_birdnest.png',
+    category: 'E-Commerce',
   },
 ];
 
@@ -77,7 +77,7 @@ const Project = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-16 lg:py-20 bg-gray-50 dark:bg-gray-800/30">
+    <section id="projects" className="py-16 lg:py-20 bg-gray-50 dark:bg-[#1a1a1a]">
       <div className="max-w-6xl mx-auto px-4 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-12">

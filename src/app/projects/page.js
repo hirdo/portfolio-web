@@ -1,73 +1,68 @@
-import Header from '../components/Header';
-import Footer from '../components/Contact';
-import Copyright from '../components/Copyright';
-import PageHero from '../components/PageHero';
-import ProjectCard from '../components/ProjectCard';
-import ScrollReveal from '../components/ScrollReveal';
-import GradientText from '../components/GradientText';
+import Header from "../components/Header";
+import Footer from "../components/Contact";
+import Copyright from "../components/Copyright";
+import PageHero from "../components/PageHero";
+import ProjectCard from "../components/ProjectCard";
+import ScrollReveal from "../components/ScrollReveal";
+import GradientText from "../components/GradientText";
 
 // Import project images
-import project1 from '/public/project (5).webp';
-import project2 from '/public/project (4).webp';
-import project3 from '/public/project (3).webp';
-import project4 from '/public/project (6).webp';
-import project5 from '/public/project (1).webp';
-import project6 from '/public/project.webp';
+import project_recipe from "/public/project_recipe.png";
+import project_icecream from "/public/project_icecream.png";
+import project_portfolio from "/public/project_portfolio.png";
+import project_taxi from "/public/project_taxi.png";
+import project_birdnest from "/public/project_birdnest.png";
 
 const projects = [
   {
-    image: project1,
-    title: 'E-Commerce Website',
-    description: 'A full-featured e-commerce platform with product listings, shopping cart, checkout, and order management.',
-    link: 'https://hirdo.github.io/e-commerce-website/',
-    sourceLink: 'https://github.com/hirdo/e-commerce-website',
-    tags: ['React', 'Redux', 'Tailwind', 'Stripe'],
-    category: 'E-Commerce',
+    image: project_portfolio,
+    title: "Portfolio Website",
+    description:
+      "A personal portfolio website showcasing skills, projects, and blog posts with modern animations.",
+    link: "https://portfolio-hirdo.vercel.app/",
+    sourceLink: "https://github.com/hirdo/portfolio-web",
+    tags: ["Typescript", "Tailwind", "Framer Motion"],
+    category: "Portfolio",
   },
   {
-    image: project2,
-    title: 'Clinic Website',
-    description: 'A professional healthcare clinic website with appointment booking, doctor profiles, and services showcase.',
-    link: 'https://hirdo.github.io/clinic_website/',
-    sourceLink: 'https://github.com/hirdo/clinic_website',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
-    category: 'Healthcare',
+    image: project_recipe,
+    title: "Recipe Website",
+    description:
+      "A culinary exploration platform that allows users to search, filter using AI features like and discover authentic food recipes from all around the world from image or voice.",
+    link: "https://worldwide-recipe.netlify.app/",
+    sourceLink: "https://github.com/hirdo/worldwide-recipes-web",
+    tags: ["Firebase Studio", "OpenAI", "Next.js", "Typescript"],
+    category: "Guide",
   },
   {
-    image: project3,
-    title: 'Portfolio Website',
-    description: 'A personal portfolio website showcasing skills, projects, and blog posts with modern animations.',
-    link: 'https://hirdo.github.io/portfolio/',
-    sourceLink: 'https://github.com/hirdo/portfolio',
-    tags: ['Next.js', 'Tailwind', 'Framer Motion'],
-    category: 'Portfolio',
+    image: project_icecream,
+    title: "Icecream Website",
+    description:
+      "An online storefront designed to showcase artisanal ice cream flavors and dessert offerings for a cozy dessert brand.",
+    link: "https://sweethome-icecream.vercel.app/",
+    sourceLink: "https://github.com/hirdo/sweethome-icecream-web",
+    tags: ["Lovable", "Supabase", "Typescript"],
+    category: "Food & Beverage",
   },
   {
-    image: project4,
-    title: 'Food Delivery App',
-    description: 'A food ordering platform allowing users to browse menus, place orders, and track deliveries in real-time.',
-    link: 'https://hirdo.github.io/Food-Order/',
-    sourceLink: 'https://github.com/hirdo/Food-Order',
-    tags: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-    category: 'Food & Beverage',
+    image: project_birdnest,
+    title: "Bird's nest Selling Website",
+    description:
+      "An online storefront for Yến Sào Mười Thiết Đào Đào, a Vietnamese brand specializing in premium, 100% pure, and naturally harvested bird's nest products.",
+    link: "https://yen-sao-muoi-thiet-dao-dao.vercel.app/",
+    sourceLink: "https://github.com/hirdo/daodao-bird-nest-web",
+    tags: ["Next.js", "Typescript", "JavaScript", "Supabase"],
+    category: "E-Commerce",
   },
   {
-    image: project5,
-    title: 'To-Do List App',
-    description: 'A productivity app for managing tasks with drag-and-drop, reminders, and category organization.',
-    link: 'https://hirdo.github.io/To-Do-List/',
-    sourceLink: 'https://github.com/hirdo/To-Do-List',
-    tags: ['React', 'LocalStorage', 'CSS3'],
-    category: 'Productivity',
-  },
-  {
-    image: project6,
-    title: 'Weather Dashboard',
-    description: 'A real-time weather application with 7-day forecasts, location search, and beautiful data visualizations.',
-    link: 'https://hirdo.github.io/Weather-Dashboard/',
-    sourceLink: 'https://github.com/hirdo/Weather-Dashboard',
-    tags: ['JavaScript', 'OpenWeather API', 'Chart.js'],
-    category: 'Dashboard',
+    image: project_taxi,
+    title: "Taxi Website",
+    description:
+      "This website serves booking platform for a local taxi service operating in the Go Cong area of Tien Giang province, Vietnam.",
+    link: "https://tiengiang-gocong-taxi.vercel.app/",
+    sourceLink: "https://github.com/hirdo/gocong-taxi-web",
+    tags: ["Next.js", "Typescript", "JavaScript", "HTML5", "CSS3", ],
+    category: "Service",
   },
 ];
 
