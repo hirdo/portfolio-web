@@ -16,7 +16,7 @@ const projects = [
     name: 'Icecream Website',
     description:
       "An online storefront designed to showcase artisanal ice cream flavors and dessert offerings for a cozy dessert brand.",
-    tags: ["Lovable", "Supabase", "Typescript"],
+    tags: ["Lovable", "Supabase", "Typescript", "Vite"],
     liveLink: 'https://sweethome-icecream.vercel.app/',
     githubLink: 'https://github.com/hirdo/sweethome-icecream',
     image: '/project_icecream.png',
@@ -27,7 +27,7 @@ const projects = [
     name: 'Recipe Website',
     description:
       "A culinary exploration platform that allows users to search, filter using AI features like and discover authentic food recipes from all around the world from image or voice.",
-    tags: ["Firebase Studio", "OpenAI", "Typescript", "CSS"],
+    tags: ["Firebase Studio", "GenkitAI", "Typescript", "Tailwind CSS"],
     liveLink: 'https://worldwide-recipe.netlify.app/',
     githubLink: 'https://github.com/hirdo/worldwide_recipes',
     image: '/project_recipe.png',
@@ -38,7 +38,7 @@ const projects = [
     name: "Bird's nest Selling Website",
     description:
       "An online storefront for Yến Sào Mười Thiết Đào Đào, a Vietnamese brand specializing in premium, 100% pure, and naturally harvested bird's nest products.",
-    tags: ["Typescript", "Supabase", "JavaScript", "CSS3"],
+    tags: ["Typescript", "Supabase", "React", "Tailwind CSS"],
     liveLink: 'https://yen-sao-muoi-thiet-dao-dao.vercel.app/',
     githubLink: 'https://github.com/hirdo/yen-sao-muoi-thiet-dao-dao',
     image: '/project_birdnest.png',
