@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faClock } from '@fortawesome/free-solid-svg-icons';
-import { capitalize, formatDate } from '@/lib/devto';
+import { capitalize, formatDate, getArticleImage } from '@/lib/devto';
 
 const tagColors = {
   ai: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border-purple-200 dark:border-purple-700',
@@ -23,26 +23,18 @@ const defaultTagColor = 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dar
 export default function BlogCard({ blog }) {
   const primaryTag = blog.tag_list?.[0] || 'article';
   const tagStyle = tagColors[primaryTag] || defaultTagColor;
-  const coverImage = blog.cover_image || blog.social_image;
+  const coverImage = getArticleImage(blog);
 
   return (
     <div className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
       <div className="relative h-52 overflow-hidden">
-        {coverImage ? (
-          <Image
-            src={coverImage}
-            alt={blog.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-            <span className="text-white text-4xl font-bold opacity-30">
-              {blog.title?.charAt(0) || 'B'}
-            </span>
-          </div>
-        )}
+        <Image
+          src={coverImage}
+          alt={blog.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
       <div className="p-6 flex flex-col flex-grow">
         <div className="flex items-center justify-between mb-3">

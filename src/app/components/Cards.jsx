@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ScrollReveal from "./ScrollReveal";
 import GradientText from "./GradientText";
-import { fetchDevToArticles, capitalize } from "@/lib/devto";
+import { fetchDevToArticles, capitalize, getArticleImage } from "@/lib/devto";
 
 const CardSection = async () => {
     let latestArticles = [];
@@ -34,7 +34,7 @@ const CardSection = async () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {latestArticles.map((article, index) => {
-                            const coverImage = article.cover_image || article.social_image;
+                            const coverImage = getArticleImage(article);
                             const primaryTag = article.tag_list?.[0] || 'article';
 
                             return (
@@ -42,21 +42,13 @@ const CardSection = async () => {
                                     <Link href={article.url} target="_blank" rel="noopener noreferrer" className="group block h-full">
                                         <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
                                             <div className="relative h-48 overflow-hidden">
-                                                {coverImage ? (
-                                                    <Image
-                                                        src={coverImage}
-                                                        alt={article.title}
-                                                        fill
-                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                                    />
-                                                ) : (
-                                                    <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                                                        <span className="text-white text-4xl font-bold opacity-30">
-                                                            {article.title?.charAt(0) || 'B'}
-                                                        </span>
-                                                    </div>
-                                                )}
+                                                <Image
+                                                    src={coverImage}
+                                                    alt={article.title}
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                />
                                                 <div className="absolute top-3 left-3 px-3 py-1 bg-white/90 dark:bg-gray-900/80 backdrop-blur-sm text-gray-900 dark:text-white text-xs font-semibold rounded-full">
                                                     {capitalize(primaryTag)}
                                                 </div>

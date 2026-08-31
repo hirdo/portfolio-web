@@ -14,7 +14,7 @@ export default function BlogsClient({ articles, tags }) {
   const filteredArticles = useMemo(() => {
     if (activeCategory === 'All') return articles;
     return articles.filter((article) =>
-      article.tag_list.includes(activeCategory.toLowerCase())
+      article.tag_list?.[0] === activeCategory.toLowerCase()
     );
   }, [activeCategory, articles]);
 
