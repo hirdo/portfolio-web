@@ -35,14 +35,14 @@ const projects = [
   },
   {
     id: 3,
-    name: "Bird's nest Selling Website",
+    name: "GymTrack Website",
     description:
-      "An online storefront for Yến Sào Mười Thiết Đào Đào, a Vietnamese brand specializing in premium, 100% pure, and naturally harvested bird's nest products.",
-    tags: ["Typescript", "Supabase", "React", "Tailwind CSS"],
-    liveLink: 'https://yen-sao-muoi-thiet-dao-dao.vercel.app/',
-    githubLink: 'https://github.com/hirdo/yen-sao-muoi-thiet-dao-dao',
-    image: '/project_birdnest.png',
-    category: 'E-Commerce',
+      "A fitness tracking platform that helps users monitor their workouts, set goals, and achieve their health objectives.",
+    tags: ["Angular", "Keycloak" , "Firebase", "Tailwind CSS"],
+    liveLink: 'https://gym-tracking-only.vercel.app/',
+    githubLink: 'https://github.com/hirdo/gymtrack-web',
+    image: '/project_gymtrack.jpg',
+    category: 'Health & Fitness',
   },
 ];
 
