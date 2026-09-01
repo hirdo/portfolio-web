@@ -12,6 +12,7 @@ import project_icecream from "/public/project_icecream.png";
 import project_portfolio from "/public/project_portfolio.png";
 import project_taxi from "/public/project_taxi.png";
 import project_birdnest from "/public/project_birdnest.png";
+import project_gymtrack from "/public/project_gymtrack.jpg";
 
 const projects = [
   {
@@ -33,6 +34,16 @@ const projects = [
     sourceLink: "https://github.com/hirdo/worldwide-recipes-web",
     tags: ["Firebase Studio", "GenkitAI", "Typescript", "Tailwind CSS"],
     category: "Guide",
+  },
+  {
+    image: project_gymtrack,
+    title: "GymTrack Website",
+    description:
+      "A fitness tracking platform that helps users monitor their workouts, set goals, and achieve their health objectives.",
+    link: "https://gym-tracking-only.vercel.app/",
+    sourceLink: "https://github.com/hirdo/gymtrack-web",
+    tags: ["Angular", "Keycloak" , "Firebase", "Tailwind CSS"],
+    category: "Health & Fitness",
   },
   {
     image: project_icecream,
