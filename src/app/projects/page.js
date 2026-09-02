@@ -13,6 +13,9 @@ import project_portfolio from "/public/project_portfolio.png";
 import project_taxi from "/public/project_taxi.png";
 import project_birdnest from "/public/project_birdnest.png";
 import project_gymtrack from "/public/project_gymtrack.jpg";
+import project_arshion_home from "/public/project_arshion_home.png";
+import project_arshion_splash from "/public/project_arshion_splash.png";
+import project_arshion_onboarding from "/public/project_arshion_onboarding.png";
 
 const projects = [
   {
@@ -25,6 +28,19 @@ const projects = [
     sourceLink: "https://github.com/hirdo/portfolio-web",
     tags: ["Typescript", "Tailwind", "Framer Motion"],
     category: "Portfolio",
+  },
+  {
+    type: "mobile",
+    image: project_arshion_home,
+    images: [project_arshion_home, project_arshion_splash, project_arshion_onboarding],
+    title: "Arshion fashion application",
+    description:
+      "A fashion e-commerce platform that allows users to browse, search, and purchase trendy clothing and accessories.",
+    appStoreLink: 'https://apps.apple.com/...',   // optional
+    playStoreLink: 'https://play.google.com/...',
+    sourceLink: "https://github.com/hirdo/worldwide-recipes-web",
+    tags: ["Flutter", "AR"],
+    category: "E-Commerce",
   },
   {
     type: "web",
@@ -80,19 +96,6 @@ const projects = [
     sourceLink: "https://github.com/hirdo/gocong-taxi-web",
     tags: ["React", "Typescript", "Vite", "Tailwind CSS"],
     category: "Service",
-  },
-  {
-    type: "mobile",
-    image: project_recipe,
-    images: [project_recipe, project_icecream, project_portfolio],
-    title: "Arshion fashion application",
-    description:
-      "A fashion e-commerce platform that allows users to browse, search, and purchase trendy clothing and accessories.",
-    tags: ["Firebase Studio", "GenkitAI", "Typescript", "Tailwind CSS"],
-    category: "E-Commerce",
-    appStoreLink: "https://apps.apple.com/",
-    playStoreLink: "https://play.google.com/",
-    sourceLink: "https://github.com/hirdo/arshion-fashion",
   },
 ];
 
