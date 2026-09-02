@@ -16,6 +16,7 @@ import project_gymtrack from "/public/project_gymtrack.jpg";
 
 const projects = [
   {
+    type: "web",
     image: project_portfolio,
     title: "Portfolio Website",
     description:
@@ -26,6 +27,7 @@ const projects = [
     category: "Portfolio",
   },
   {
+    type: "web",
     image: project_recipe,
     title: "Recipe Website",
     description:
@@ -36,6 +38,7 @@ const projects = [
     category: "Guide",
   },
   {
+    type: "web",
     image: project_gymtrack,
     title: "GymTrack Website",
     description:
@@ -46,6 +49,7 @@ const projects = [
     category: "Health & Fitness",
   },
   {
+    type: "web",
     image: project_icecream,
     title: "Icecream Website",
     description:
@@ -56,6 +60,7 @@ const projects = [
     category: "Food & Beverage",
   },
   {
+    type: "web",
     image: project_birdnest,
     title: "Bird's nest Selling Website",
     description:
@@ -66,6 +71,7 @@ const projects = [
     category: "E-Commerce",
   },
   {
+    type: "web",
     image: project_taxi,
     title: "Taxi Website",
     description:

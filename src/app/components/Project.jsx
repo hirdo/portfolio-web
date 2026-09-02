@@ -13,6 +13,7 @@ import TechBadge from './TechBadge';
 const projects = [
   {
     id: 1,
+    type: 'web',
     name: 'Icecream Website',
     description:
       "An online storefront designed to showcase artisanal ice cream flavors and dessert offerings for a cozy dessert brand.",
@@ -24,6 +25,7 @@ const projects = [
   },
   {
     id: 2,
+    type: 'web',
     name: 'Recipe Website',
     description:
       "A culinary exploration platform that allows users to search, filter using AI features like and discover authentic food recipes from all around the world from image or voice.",
@@ -35,6 +37,7 @@ const projects = [
   },
   {
     id: 3,
+    type: 'web',
     name: "GymTrack Website",
     description:
       "A fitness tracking platform that helps users monitor their workouts, set goals, and achieve their health objectives.",
