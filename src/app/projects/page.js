@@ -81,6 +81,19 @@ const projects = [
     tags: ["React", "Typescript", "Vite", "Tailwind CSS"],
     category: "Service",
   },
+  {
+    type: "mobile",
+    image: project_recipe,
+    images: [project_recipe, project_icecream, project_portfolio],
+    title: "Arshion fashion application",
+    description:
+      "A fashion e-commerce platform that allows users to browse, search, and purchase trendy clothing and accessories.",
+    tags: ["Firebase Studio", "GenkitAI", "Typescript", "Tailwind CSS"],
+    category: "E-Commerce",
+    appStoreLink: "https://apps.apple.com/",
+    playStoreLink: "https://play.google.com/",
+    sourceLink: "https://github.com/hirdo/arshion-fashion",
+  },
 ];
 
 export default function ProjectsPage() {
