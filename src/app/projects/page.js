@@ -38,7 +38,7 @@ const projects = [
       "A fashion e-commerce platform that allows users to browse, search, and purchase trendy clothing and accessories.",
     appStoreLink: 'https://apps.apple.com/...',   // optional
     playStoreLink: 'https://play.google.com/...',
-    sourceLink: "https://github.com/hirdo/worldwide-recipes-web",
+    sourceLink: "https://github.com/cse-arshion",
     tags: ["Flutter", "AR"],
     category: "E-Commerce",
   },
