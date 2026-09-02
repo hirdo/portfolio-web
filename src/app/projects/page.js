@@ -13,9 +13,13 @@ import project_portfolio from "/public/project_portfolio.png";
 import project_taxi from "/public/project_taxi.png";
 import project_birdnest from "/public/project_birdnest.png";
 import project_gymtrack from "/public/project_gymtrack.jpg";
+import project_arshion_home from "/public/project_arshion_home.png";
+import project_arshion_splash from "/public/project_arshion_splash.png";
+import project_arshion_onboarding from "/public/project_arshion_onboarding.png";
 
 const projects = [
   {
+    type: "web",
     image: project_portfolio,
     title: "Portfolio Website",
     description:
@@ -26,6 +30,20 @@ const projects = [
     category: "Portfolio",
   },
   {
+    type: "mobile",
+    image: project_arshion_home,
+    images: [project_arshion_home, project_arshion_splash, project_arshion_onboarding],
+    title: "Arshion fashion application",
+    description:
+      "A fashion e-commerce platform that allows users to browse, search, and purchase trendy clothing and accessories.",
+    appStoreLink: 'https://apps.apple.com/...',   // optional
+    playStoreLink: 'https://play.google.com/...',
+    sourceLink: "https://github.com/cse-arshion",
+    tags: ["Flutter", "AR"],
+    category: "E-Commerce",
+  },
+  {
+    type: "web",
     image: project_recipe,
     title: "Recipe Website",
     description:
@@ -36,6 +54,7 @@ const projects = [
     category: "Guide",
   },
   {
+    type: "web",
     image: project_gymtrack,
     title: "GymTrack Website",
     description:
@@ -46,6 +65,7 @@ const projects = [
     category: "Health & Fitness",
   },
   {
+    type: "web",
     image: project_icecream,
     title: "Icecream Website",
     description:
@@ -56,6 +76,7 @@ const projects = [
     category: "Food & Beverage",
   },
   {
+    type: "web",
     image: project_birdnest,
     title: "Bird's nest Selling Website",
     description:
@@ -66,6 +87,7 @@ const projects = [
     category: "E-Commerce",
   },
   {
+    type: "web",
     image: project_taxi,
     title: "Taxi Website",
     description:
