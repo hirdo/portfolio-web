@@ -27,8 +27,8 @@ const stats = [
 ];
 
 const certifications = [
-  { icon: faLaptopCode, title: 'Backend Course', image: '/certificate.jpg' },
-  { icon: faServer, title: 'Frontend Course' },
+  { icon: faServer, title: 'Frontend Course', image: '/freeCodeCamp_fe.jpeg' },
+  { icon: faLaptopCode, title: 'Backend Course' },
   { icon: faDatabase, title: 'Database Course' },
   { icon: faCloud, title: 'DevOps Course' },
   { icon: faShieldAlt, title: 'Security Course' },
