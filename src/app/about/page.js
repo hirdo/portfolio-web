@@ -23,7 +23,7 @@ const stats = [
   { target: 3, suffix: '+', label: 'Years Experience' },
   { target: 6, suffix: '+', label: 'Projects Completed' },
   { target: 5, suffix: '+', label: 'Happy Clients' },
-  { target: 2, suffix: '+', label: 'Certifications' },
+  { target: 3, suffix: '+', label: 'Certifications' },
 ];
 
 const certifications = [
