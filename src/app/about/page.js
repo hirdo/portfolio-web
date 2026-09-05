@@ -23,12 +23,12 @@ const stats = [
   { target: 3, suffix: '+', label: 'Years Experience' },
   { target: 6, suffix: '+', label: 'Projects Completed' },
   { target: 5, suffix: '+', label: 'Happy Clients' },
-  { target: 2, suffix: '+', label: 'Certifications' },
+  { target: 3, suffix: '+', label: 'Certifications' },
 ];
 
 const certifications = [
-  { icon: faLaptopCode, title: 'Backend Course', image: '/certificate.jpg' },
-  { icon: faServer, title: 'Frontend Course' },
+  { icon: faServer, title: 'Frontend Course', image: '/freeCodeCamp_fe.jpeg' },
+  { icon: faLaptopCode, title: 'Backend Course' },
   { icon: faDatabase, title: 'Database Course' },
   { icon: faCloud, title: 'DevOps Course' },
   { icon: faShieldAlt, title: 'Security Course' },
