@@ -59,7 +59,7 @@ const projects = [
     title: "GymTrack Website",
     description:
       "A fitness tracking platform that helps users monitor their workouts, set goals, and achieve their health objectives.",
-    link: "https://gym-tracking-only.vercel.app/",
+    link: "https://gym-trackpro.vercel.app/",
     sourceLink: "https://github.com/hirdo/gymtrack-web",
     tags: ["Angular", "Keycloak" , "Firebase", "Tailwind CSS"],
     category: "Health & Fitness",
